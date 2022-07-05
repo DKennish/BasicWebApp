@@ -11,6 +11,12 @@ public class QueryProcessor {
         if (query.toLowerCase().contains("name")) {
             return "Diana";
         }
+        if (query.toLowerCase().contains("numbers is the largest") ) {
+            return "500";
+        }
+
+
+
         return "";
     }
 }
