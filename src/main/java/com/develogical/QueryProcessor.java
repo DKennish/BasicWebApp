@@ -22,7 +22,7 @@ public class QueryProcessor {
         else if (query.toLowerCase().contains("numbers is the largest") ) {
             ArrayList<Integer> a = new ArrayList<>();
             Pattern p = Pattern.compile("-?\\d+");
-            Matcher m = p.matcher("There are more than -2 and less than 12 numbers here");
+            Matcher m = p.matcher(query);
             while (m.find()) {
                 a.add(Integer. parseInt(m.group()));
             }
