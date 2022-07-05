@@ -34,4 +34,11 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("numbers is the largest"), containsString("500"));
     }
 
+    @Test
+    public void addsNumbers() throws Exception {
+        assertThat(queryProcessor.process("plus"), containsString("501"));
+    }
+
+
+
 }
