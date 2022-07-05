@@ -15,7 +15,7 @@ public class QueryProcessor {
         else if (query.toLowerCase().contains("name")) {
             return "Diana";
         }
-        else if (query.toLowerCase().contains("numbers is the largest") ) {
+        else if (query.toLowerCase().contains("numbers%20is%20the%20largest") ) {
             ArrayList<Integer> a = new ArrayList<>();
             Pattern p = Pattern.compile("-?\\d+");
             Matcher m = p.matcher(query);
