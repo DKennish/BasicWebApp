@@ -29,7 +29,13 @@ public class QueryProcessor {
             return a.stream().max(Integer::compare).toString();
         }
         else if (query.toLowerCase().contains("plus") ) {
-            return "501";
+            ArrayList<Integer> a = new ArrayList<>();
+            Pattern p = Pattern.compile("-?\\d+");
+            Matcher m = p.matcher(query);
+            while (m.find()) {
+                a.add(Integer. parseInt(m.group()));
+            }
+            return a.stream().reduce(Integer::sum).toString();
         }
 
 
