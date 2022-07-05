@@ -1,5 +1,13 @@
 package com.develogical;
 
+import sun.awt.image.ImageWatched;
+import sun.jvm.hotspot.oops.ArrayKlass;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class QueryProcessor {
 
     public String process(String query) {
@@ -12,7 +20,13 @@ public class QueryProcessor {
             return "Diana";
         }
         else if (query.toLowerCase().contains("numbers is the largest") ) {
-            return "500";
+            ArrayList<Integer> a = new ArrayList<>();
+            Pattern p = Pattern.compile("-?\\d+");
+            Matcher m = p.matcher("There are more than -2 and less than 12 numbers here");
+            while (m.find()) {
+                a.add(Integer. parseInt(m.group()));
+            }
+            return a.stream().max(Integer::compare).toString();
         }
         else if (query.toLowerCase().contains("plus") ) {
             return "501";
